@@ -1,0 +1,33 @@
+The hex files in this directory have been built from Niklas Ekström's source at https://github.com/niklasekstrom/amiga-par-to-spi-adapter
+
+The fuses to burn differs a bit depending on which microcontroller is being used.
+I have used the below fuses for ATmega328P but the same should be ok with ATmega328 too.
+
+ATmega328/ATmega328P
+====================
+Lfuse FF
+Hfuse DE
+Efuse FD
+
+And for ATmega48A I have used the following which I think should be ok for all 48/88/168 microcontrollers:
+
+ATmega48/88/168
+================
+Lfuse FF
+Hfuse DD
+Efuse FE
+
+
+Here are some examples for using AVRDUDE in Windows to upload firmware using a USBASP programmer and burning the fuses at the same time:
+
+328P
+====
+avrdude.exe -C avrdude.conf -v -p atmega328p -c usbasp -U efuse:w:0xFD:m -U hfuse:w:0xDE:m -U lfuse:w:0xFF:m -U flash:w:amiga-par-to-spi-328.hex
+
+48/48A
+======
+avrdude.exe -C avrdude.conf -v -p atmega48 -c usbasp -U efuse:w:0xFE:m -U hfuse:w:0xDD:m -U lfuse:w:0xFF:m -U flash:w:amiga-par-to-spi-48.hex
+
+88/88A
+======
+avrdude.exe -C avrdude.conf -v -p atmega88 -c usbasp -U efuse:w:0xFE:m -U hfuse:w:0xDD:m -U lfuse:w:0xFF:m -U flash:w:amiga-par-to-spi-88.hex
