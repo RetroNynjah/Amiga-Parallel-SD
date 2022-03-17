@@ -4,15 +4,15 @@
 
 MicroSD SPI interface based on a design concept by [Niklas Ekström](https://github.com/niklasekstrom/amiga-par-to-spi-adapter)
 
-It's quite useful for transferring files to and from the Amiga 500 and other Amiga models that doesn't have a PCMCIA interface.  
-The difference from some previous designs is that this version is very small fully integrated.  
-It has a USB-C connector for external power as it can't be powered by the parallel port.
+It's quite useful for transferring files to and from the Amiga 500 and other Amiga models that doesn't have a PCMCIA interface or any other interface for mass storage devices.  
+The difference from some previous designs is that this version is very small and fully integrated.  
+It has a USB-C connector for power because the parallel port doesn't supply any power. It should be possible to take power from another port such as the floppy port or maybe even the joystick ports(?) if you have an adapter for that but I prefer to use an external power source to avoid damaging my Amiga.
 
-The Amiga driver (spisd.device) was written by Mike Stirling and can be downloaded from the [download page](https://www.mike-stirling.com/all-downloads/) over at his website.
+A suitable Amiga driver for this device was developed by Niklas Ekström. The source code and a compiled driver can be found in his [version 2.0 release](https://github.com/niklasekstrom/amiga-par-to-spi-adapter/releases/tag/v2.0).
 
 ## Installation
-You need the spisd.device driver in Devs: and most likely the fat95 DOS handler in L: and you need a suitable mount file, either in Devs:/DOSDrivers for auto-mounting or in a convenient location for mounting on demand.  
-I have a mount file (SD0) in the Amiga folder in this Github repository.
+You need the spisd.device driver in Devs: and most likely the [fat95 DOS handler](https://aminet.net/package/disk/misc/fat95) in L: and you need a suitable mount file, either in Devs:DOSDrivers for auto-mounting or in a convenient location for mounting on demand.  
+I have a suitable mount file (SD0) in the [amiga](amiga/) folder in my Github repository.
 
 ### Warning:
 Do **NOT** insert or remove the device while the computer is running.
