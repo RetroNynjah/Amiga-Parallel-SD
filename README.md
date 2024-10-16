@@ -8,7 +8,9 @@ It's quite useful for transferring files to and from the Amiga 500 and other Ami
 The difference from some previous designs is that this version is very small and fully integrated.  
 It has a USB-C connector for power because the parallel port doesn't supply any power. It should be possible to take power from another port such as the floppy port or maybe even the joystick ports(?) if you have an adapter for that but I prefer to use an external power source to avoid damaging my Amiga.
 
-A suitable Amiga driver for this device was developed by Niklas Ekström. The source code and a compiled driver can be found in his [version 2.0 release](https://github.com/niklasekstrom/amiga-par-to-spi-adapter/releases/tag/v2.0).
+A suitable Amiga driver for this device was developed by Niklas Ekström. The source code and a compiled driver can be found in his [release archive](https://github.com/niklasekstrom/amiga-par-to-spi-adapter/releases).
+
+I have designed a 3D-printable enclosure which can be found at https://www.thingiverse.com/thing:6799759/files
 
 ## Installation
 You need the spisd.device driver in Devs: and most likely the [fat95 DOS handler](https://aminet.net/package/disk/misc/fat95) in L: and you need a suitable mount file, either in Devs:DOSDrivers for auto-mounting or in a convenient location for mounting on demand.  
